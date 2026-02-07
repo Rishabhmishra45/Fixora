@@ -1,0 +1,26 @@
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --primary: #2563eb;
+  --secondary: #64748b;
+  --card: #f8fafc;
+  --border: #e2e8f0;
+}
+
+.theme-dark {
+  --bg: #020617;
+  --text: #f8fafc;
+  --primary: #38bdf8;
+  --secondary: #94a3b8;
+  --card: #020617;
+  --border: #1e293b;
+}
+
+.theme-midnight {
+  --bg: #020617;
+  --text: #e5e7eb;
+  --primary: #22d3ee;
+  --secondary: #64748b;
+  --card: rgba(15, 23, 42, 0.85);
+  --border: rgba(148, 163, 184, 0.2);
+}

@@ -1,0 +1,13 @@
+import Toast from "./Toast";
+
+const ToastContainer = ({ toasts }) => {
+  return (
+    <div className="fixed top-5 right-5 z-50 space-y-3">
+      {toasts.map((toast) => (
+        <Toast key={toast.id} toast={toast} />
+      ))}
+    </div>
+  );
+};
+
+export default ToastContainer;

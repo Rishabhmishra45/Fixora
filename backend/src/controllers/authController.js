@@ -23,7 +23,10 @@ export const register = async (req, res, next) => {
 
     const token = generateToken(user);
 
-    successResponse(res, 201, "Registration successful", { token, user });
+    successResponse(res, 201, "Registration successful", {
+      token,
+      user
+    });
   } catch (error) {
     next(error);
   }
@@ -40,7 +43,10 @@ export const login = async (req, res, next) => {
     }
 
     const token = generateToken(user);
-    successResponse(res, 200, "Login successful", { token, user });
+    successResponse(res, 200, "Login successful", {
+      token,
+      user
+    });
   } catch (error) {
     next(error);
   }

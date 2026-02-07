@@ -13,24 +13,27 @@ const protect = async (req, res, next) => {
   }
 
   if (!token) {
-    res.status(401);
-    throw new Error("Not authorized, token missing");
+    return res.status(401).json({
+      message: "Not authorized, token missing"
+    });
   }
 
   try {
     const decoded = jwt.verify(token, env.jwtSecret);
     const user = await User.findById(decoded.id).select("-password");
 
-    if (!user || !user.isActive) {
-      res.status(401);
-      throw new Error("User not active");
+    if (!user || user.isActive === false) {
+      return res.status(401).json({
+        message: "User not active"
+      });
     }
 
     req.user = user;
     next();
   } catch (error) {
-    res.status(401);
-    throw new Error("Not authorized");
+    return res.status(401).json({
+      message: "Not authorized"
+    });
   }
 };
 
